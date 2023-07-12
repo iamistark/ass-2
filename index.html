@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Box App</title>
+</head>
+<body>
+  <h1>Input Box App</h1>
+  
+  <input type="text" id="inputBox" placeholder="Type something">
+  <button onclick="addItem()">Submit</button>
+
+  <ul id="itemList"></ul>
+
+  <script>
+    function addItem() {
+      var inputElement = document.getElementById("inputBox");
+      var itemListElement = document.getElementById("itemList");
+      var inputValue = inputElement.value;
+
+      if (inputValue !== "") {
+        var listItem = document.createElement("li");
+        listItem.textContent = inputValue;
+        itemListElement.appendChild(listItem);
+        inputElement.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
